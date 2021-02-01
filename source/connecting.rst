@@ -1,7 +1,8 @@
 How to connect to litio from home
 =================================
 
-That is some text.
+Basic information:
+    address: 192.168.16.175
 
 Linux
 *****

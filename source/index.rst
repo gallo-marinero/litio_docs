@@ -9,25 +9,22 @@ Welcome to litio machine's documentation!
 Another simple header
 *********************
 
-Some text.::
-    
-    print 'hello?'
-    >> hello
-
-User's guide
-************
+Welcome to the computing machine of CIC Energigune. In this page 
+you will find all the information required for running and 
+connecting to litio machine. 
 
 .. toctree::
    :maxdepth: 3
-   :caption: Contents:
+   :caption: User's guide:
 
    connecting
 
 
+..   
+ Indices and tables
+ ==================
 
-Indices and tables
-==================
+ * :ref:`genindex`
+ * :ref:`modindex`
+ * :ref:`search`
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
