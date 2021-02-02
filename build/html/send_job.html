@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit jobs &#8212; litio_docs 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Storage" href="storage.html" />
+    <link rel="prev" title="How to connect to litio" href="connecting.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="storage.html" title="Storage"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="connecting.html" title="How to connect to litio"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">litio_docs 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Submit jobs</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="submit-jobs">
+<span id="script"></span><h1>Submit jobs<a class="headerlink" href="#submit-jobs" title="Permalink to this headline">¶</a></h1>
+<p>Jobs in litio should not be executed interactively, but rather through a script
+that efficiently takes care of the queue and resources. Litio uses <a class="reference external" href="https://www.openpbs.org/">OpenPBS</a>.</p>
+<ol class="arabic">
+<li><p>Copy the script below and save it as (for example) <em>sendjob.pbs</em>.</p></li>
+<li><p>Submit it from the terminal with:</p>
+<p><code class="docutils literal notranslate"><span class="pre">qsub</span> <span class="pre">sendjob.pbs</span></code></p>
+</li>
+</ol>
+<p>This is a working script to submit jobs in litio.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+
+<span class="c1">## Define the name for this job</span>
+<span class="c1">#PBS -N test1</span>
+<span class="c1">## Define the number of cores (ncpus)</span>
+<span class="c1">#PBS -l ncpus=1</span>
+<span class="c1">## Merge standard output and error files</span>
+<span class="c1">#PBS -j oe</span>
+<span class="c1">## (Optional) Define the maximum time you want the job to be running. Default: unlimited</span>
+<span class="c1">###PBS -l walltime=71:59:00</span>
+<span class="c1">## (Optional) Mail is sent to you when the job starts and when it terminates or aborts</span>
+<span class="c1">###PBS -m bea</span>
+<span class="c1">## (Optional) Specify your email address</span>
+<span class="c1">###PBS -M &lt;username@cicenergigune.com&gt;</span>
+
+<span class="c1">## Create scratch directory if it does not exist</span>
+<span class="k">if</span> ! <span class="o">[</span> -d /scratch/<span class="nv">$USER</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+ mkdir /scratch/<span class="nv">$USER</span>
+<span class="k">fi</span>
+
+<span class="c1">## Using the job id ($PBS_JOBID), create the specific scratch directory</span>
+<span class="c1">## and hold its name as $SCRDIR</span>
+<span class="nb">export</span> <span class="nv">SCRDIR</span><span class="o">=</span>/scratch/<span class="nv">$USER</span>/<span class="nv">$PBS_JOBID</span>
+mkdir <span class="nv">$SCRDIR</span>
+
+<span class="c1">## Go to scratch directory and copy everything from working directory</span>
+<span class="nb">cd</span> <span class="nv">$SCRDIR</span>
+cp <span class="nv">$PBS_O_WORKDIR</span>/* .
+
+<span class="c1">## Run the code</span>
+your_program your_input.inp
+
+<span class="c1">## Copy back the results</span>
+cp * <span class="nv">$PBS_O_WORKDIR</span>/
+
+<span class="c1">## Tell PBS to wait till all files are copied</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">0</span> <span class="o">==</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+ <span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
+ rm -rf <span class="nv">$SCRDIR</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Comments and instructions</p>
+<p><code class="docutils literal notranslate"><span class="pre">#</span></code> This is an instruction for the queue system</p>
+<p><code class="docutils literal notranslate"><span class="pre">##</span></code> This is a comment</p>
+</div>
+<p>Note that lines starting with # are instructions for the queue manager (they
+are not comments). You need to add more than one # to write a comment.</p>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="connecting.html"
+                        title="previous chapter">How to connect to litio</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="storage.html"
+                        title="next chapter">Storage</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/send_job.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="storage.html" title="Storage"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="connecting.html" title="How to connect to litio"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">litio_docs 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Submit jobs</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Alfonso Gallo.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

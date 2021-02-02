@@ -3,31 +3,29 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to litio machine's documentation!
-=========================================
+Litio documentation contents
+============================
 
-Another simple header
-*********************
-
-Some text.::
-    
-    print 'hello?'
-    >> hello
-
-User's guide
-************
+Welcome to the computing machine of CIC Energigune. In this page 
+you will find all the information required for running and 
+connecting to litio machine. 
 
 .. toctree::
    :maxdepth: 3
-   :caption: Contents:
 
    connecting
 
+   send_job
 
+   storage
 
-Indices and tables
-==================
+   contact
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+..   
+ Indices and tables
+ ==================
+
+ * :ref:`genindex`
+ * :ref:`modindex`
+ * :ref:`search`
+

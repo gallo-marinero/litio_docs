@@ -3,11 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to litio machine's documentation!
-=========================================
-
-Another simple header
-*********************
+Litio documentation contents
+============================
 
 Welcome to the computing machine of CIC Energigune. In this page 
 you will find all the information required for running and 
@@ -15,10 +12,14 @@ connecting to litio machine.
 
 .. toctree::
    :maxdepth: 3
-   :caption: User's guide:
 
    connecting
 
+   send_job
+
+   storage
+
+   contact
 
 ..   
  Indices and tables

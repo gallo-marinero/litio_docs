@@ -5,18 +5,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How to connect to litio from home &#8212; litio_docs 0.0.1 documentation</title>
+    <title>How to connect to litio &#8212; litio_docs 0.0.1 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Welcome to litio machine’s documentation!" href="index.html" /> 
+    <link rel="next" title="Submit jobs" href="send_job.html" />
+    <link rel="prev" title="Litio documentation contents" href="index.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -25,10 +29,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="index.html" title="Welcome to litio machine’s documentation!"
+          <a href="send_job.html" title="Submit jobs"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Litio documentation contents"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">litio_docs 0.0.1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">How to connect to litio from home</a></li> 
+        <li class="nav-item nav-item-this"><a href="">How to connect to litio</a></li> 
       </ul>
     </div>  
 
@@ -37,16 +44,150 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="how-to-connect-to-litio-from-home">
-<h1>How to connect to litio from home<a class="headerlink" href="#how-to-connect-to-litio-from-home" title="Permalink to this headline">¶</a></h1>
-<p>That is some text.</p>
-<div class="section" id="linux">
-<h2>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
-<p>That is some text.</p>
+  <div class="section" id="how-to-connect-to-litio">
+<h1>How to connect to litio<a class="headerlink" href="#how-to-connect-to-litio" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure the CIC VPN is active if you are trying to connect from outside the institute</p>
+</div>
+<div class="topic">
+<p class="topic-title">You need to have at hand:</p>
+<dl class="simple">
+<dt>IP address</dt><dd><p><strong>192.168.16.175</strong></p>
+</dd>
+<dt><em>username</em></dt><dd><p>same as in your email address (e.g.: agallo)</p>
+</dd>
+<dt><em>password</em></dt><dd><p>usually yournameyear (e.g.: alfonso2021; should be changed from the terminal on first login with passwd)</p>
+</dd>
+<dt><em>vnc_id</em></dt><dd><p>given by the admin (e.g.: 5901)</p>
+</dd>
+<dt><em>vnc_pass</em></dt><dd><p>same as <em>password</em> (e.g.: alfonso2021; should be changed from the terminal on first login with vncpasswd)</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="web-browser">
+<h2>Web browser<a class="headerlink" href="#web-browser" title="Permalink to this headline">¶</a></h2>
+<p>No matter your operating system, you can always use the web browser to
+access the terminal (note: the terminal!) of the machine, through the
+<a class="reference external" href="https://192.168.16.175:9090/">address</a>:</p>
+<p><a class="reference external" href="https://192.168.16.175:9090/">https://192.168.16.175:9090/</a></p>
 </div>
 <div class="section" id="windows">
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
-<p>That is some text.</p>
+<p>On first access, remember to change the passwords from a terminal.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Change passwords!</p>
+<ul class="simple">
+<li><p><strong>passwd</strong> to change your system-wide password</p></li>
+<li><p><strong>vncpasswd</strong> to change your VNC password (answer <em>no</em> to the question 'Would you like to entera view-only password (y/n)?'</p></li>
+</ul>
+</div>
+<div class="section" id="establish-a-tunnel">
+<h3>1. Establish a tunnel<a class="headerlink" href="#establish-a-tunnel" title="Permalink to this headline">¶</a></h3>
+<p>To connect to the machine using the graphical interface, first follow this steps to establish a tunnel:</p>
+<ol class="arabic simple">
+<li><p>Download and <a class="reference external" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">install Putty</a></p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>Open PuTTY and <strong>enter the address 192.168.16.175*. Enter a name (e.g.: litio) and **click save</strong> so that you don’t have to enter the data every time you connect.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/putty1.png"><img alt="_images/putty1.png" class="align-center" src="_images/putty1.png" style="width: 364.0px; height: 359.20000000000005px;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Go to Connection -&gt; Data and <strong>enter your username</strong></p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/putty2.png"><img alt="_images/putty2.png" class="align-center" src="_images/putty2.png" style="width: 364.0px; height: 357.6px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>Expand the SSH tab, go to SSH -&gt; Tunnels. <strong>Fill in the Source port and Destination boxes</strong> with your <em>vsc_id</em> and <strong>127.0.0.1:</strong><em>vsc_id</em> <strong>data</strong>, respectively. Check image below.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/putty3.png"><img alt="_images/putty3.png" class="align-center" src="_images/putty3.png" style="width: 364.8px; height: 356.8px;" /></a>
+<ol class="arabic simple" start="5">
+<li><p><strong>Click Add</strong> to save the tunnel.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/putty4.png"><img alt="_images/putty4.png" class="align-center" src="_images/putty4.png" style="width: 364.0px; height: 358.40000000000003px;" /></a>
+<ol class="arabic simple" start="6">
+<li><p>Go back to Session tab and <strong>save the changes</strong> in ‘litio’ (or the name you chose).</p></li>
+<li><p><strong>Click Open</strong> to start a new ssh session. A terminal will open, <strong>enter your password</strong>. Be aware that <strong>although you type, you will not see any character</strong>: it is fine!</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/putty5.png"><img alt="_images/putty5.png" class="align-center" src="_images/putty5.png" style="width: 398.4px; height: 253.2px;" /></a>
+<ol class="arabic simple" start="8">
+<li><p>Once logged in, you should see something like this.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/putty6.png"><img alt="_images/putty6.png" class="align-center" src="_images/putty6.png" style="width: 399.0px; height: 253.2px;" /></a>
+</div>
+<div class="section" id="connect">
+<h3>2. Connect<a class="headerlink" href="#connect" title="Permalink to this headline">¶</a></h3>
+<p><strong>With the tunnel active</strong>, the VNC connection can be established.</p>
+<div class="section" id="google-chrome-vnc">
+<span id="see-above"></span><h4>Google Chrome VNC<a class="headerlink" href="#google-chrome-vnc" title="Permalink to this headline">¶</a></h4>
+<p>Quite handy as there is no need to install anything on your personal computer.</p>
+<ol class="arabic simple">
+<li><p>Go to the Google Web Store, <a class="reference external" href="https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch/iabmpiboiopbgfabjmgeedhcmjenhbla">add VNC viewer for Google Chrome</a> and start it.</p></li>
+<li><p>Enter <strong>localhost:</strong><em>vnc_id</em> (e.g.: localhost:5901).</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/vnc.png"><img alt="_images/vnc.png" class="align-center" src="_images/vnc.png" style="width: 363.15000000000003px; height: 284.85px;" /></a>
+</div>
+<div class="section" id="tight-vnc">
+<h4>Tight VNC<a class="headerlink" href="#tight-vnc" title="Permalink to this headline">¶</a></h4>
+<p>Alternatively, a program can be installed (any other VNC client will do).</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.tightvnc.com/download.php">Download</a> and install TightVNC</p></li>
+<li><p><strong>Connect</strong> to <strong>localhost:</strong><em>vnc_id</em></p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/tightvnc.png"><img alt="_images/tightvnc.png" class="align-center" src="_images/tightvnc.png" style="width: 344.0px; height: 248.8px;" /></a>
+<p>If everything went fine, you will see your desktop on litio.</p>
+</div>
+</div>
+</div>
+<div class="section" id="linux">
+<h2>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
+<p>On first access, remember to change the passwords from a terminal.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Change passwords!</p>
+<ul class="simple">
+<li><p><strong>passwd</strong> to change your system-wide password</p></li>
+<li><p><strong>vncpasswd</strong> to change your VNC password (answer <em>no</em> to the question 'Would you like to entera view-only password (y/n)?'</p></li>
+</ul>
+</div>
+<p>To access litio via the terminal, use ssh:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">username&#64;192.168.16.175</span></code></p>
+<p>To avoid entering the password every time you connect, ssh-keygen could be used as described for instance here: <a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-2">how to set up SSH keys</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Access via Web Browser</p>
+<p>Remember you can also access a terminal via your web browser entering in the search bar the following <a class="reference external" href="https://192.168.16.175:9090/">address</a>:</p>
+<p><a class="reference external" href="https://192.168.16.175:9090/">https://192.168.16.175:9090/</a></p>
+</div>
+<p>To open the Graphical User Interface follow these steps:</p>
+<div class="section" id="id2">
+<h3>1. Establish a tunnel<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Open a terminal in your local computer and execute the command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">vnc_id:127.0.0.1:vnc_id</span> <span class="pre">username&#64;192.168.16.175</span></code></p>
+<p>For example: <em>ssh -L 5901:127.0.0.1:5901 gallo&#64;192.168.16.175</em>.</p>
+<p><strong>Do not close!</strong> As in windows it needs to stay open in order to allow the VNC
+client to connect.</p>
+</div>
+<div class="section" id="id3">
+<h3>2. Connect<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h4>Google Chrome VNC<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>Same procedure as for Windows (see <a class="reference internal" href="#see-above"><span class="std std-ref">Google Chrome VNC</span></a>).</p>
+</div>
+<div class="section" id="remmina">
+<h4>Remmina<a class="headerlink" href="#remmina" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p>Install Remmina <a class="reference external" href="https://remmina.org/how-to-install-remmina/">more instructions here</a>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-add-repository</span> <span class="pre">ppa:remmina-ppa-team/remmina-next</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">update</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">remmina</span> <span class="pre">remmina-plugin-rdp</span> <span class="pre">remmina-plugin-secret</span></code></p>
+</li>
+<li><p>Open it, choose VNC and enter <strong>localhost:</strong><em>vnc_id</em> (see figure below) or <strong>127.0.0.1:</strong><em>vnc_id</em>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/remmina.png"><img alt="_images/remmina.png" class="align-center" src="_images/remmina.png" style="width: 482.40000000000003px; height: 351.20000000000005px;" /></a>
+<p>If everything went fine, you should be able to see the litio’s desktop.</p>
+</div>
+</div>
 </div>
 </div>
 
@@ -59,16 +200,36 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">How to connect to litio from home</a><ul>
-<li><a class="reference internal" href="#linux">Linux</a></li>
-<li><a class="reference internal" href="#windows">Windows</a></li>
+<li><a class="reference internal" href="#">How to connect to litio</a><ul>
+<li><a class="reference internal" href="#web-browser">Web browser</a></li>
+<li><a class="reference internal" href="#windows">Windows</a><ul>
+<li><a class="reference internal" href="#establish-a-tunnel">1. Establish a tunnel</a></li>
+<li><a class="reference internal" href="#connect">2. Connect</a><ul>
+<li><a class="reference internal" href="#google-chrome-vnc">Google Chrome VNC</a></li>
+<li><a class="reference internal" href="#tight-vnc">Tight VNC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linux">Linux</a><ul>
+<li><a class="reference internal" href="#id2">1. Establish a tunnel</a></li>
+<li><a class="reference internal" href="#id3">2. Connect</a><ul>
+<li><a class="reference internal" href="#id4">Google Chrome VNC</a></li>
+<li><a class="reference internal" href="#remmina">Remmina</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
-                        title="previous chapter">Welcome to litio machine’s documentation!</a></p>
+                        title="previous chapter">Litio documentation contents</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="send_job.html"
+                        title="next chapter">Submit jobs</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -97,10 +258,13 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="index.html" title="Welcome to litio machine’s documentation!"
+          <a href="send_job.html" title="Submit jobs"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Litio documentation contents"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">litio_docs 0.0.1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">How to connect to litio from home</a></li> 
+        <li class="nav-item nav-item-this"><a href="">How to connect to litio</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
