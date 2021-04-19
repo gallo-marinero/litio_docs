@@ -44,7 +44,7 @@ To connect to the machine using the graphical interface, first follow this steps
 
 .. _install Putty: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
-2. Open PuTTY and **enter the address 192.168.16.160*. Enter a name (e.g.: litio) and **click save** so that you don’t have to enter the data every time you connect.
+2. Open PuTTY and **enter the address 192.168.16.160**. Enter a name (e.g.: litio) and **click save** so that you don’t have to enter the data every time you connect.
 
 .. image:: pics_connect_litio/putty1.png
    :scale: 80 %
