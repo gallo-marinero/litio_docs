@@ -1,5 +1,5 @@
 How to connect to litio
-=======================
+#######################
 
 .. warning:: Make sure the CIC VPN is active if you are trying to connect from outside the institute
 
@@ -17,7 +17,7 @@ How to connect to litio
         same as *password* (e.g.: alfonso2021; should be changed from the terminal on first login with vncpasswd)
 
 Web browser
-###########
+***********
 No matter your operating system, you can always use the web browser to 
 access the terminal (note: the terminal!) of the machine, through the
 `address <https://192.168.16.160:9090/>`_:
@@ -27,7 +27,7 @@ https://192.168.16.160:9090/
 
 
 Windows
-#######
+*******
 On first access, remember to change the passwords from a terminal.
 
 .. warning:: Change passwords!
@@ -114,7 +114,7 @@ Alternatively, a program can be installed (any other VNC client will do).
 If everything went fine, you will see your desktop on litio. 
 
 Linux
-#####
+*****
 
 On first access, remember to change the passwords from a terminal.
 
@@ -125,7 +125,7 @@ On first access, remember to change the passwords from a terminal.
    * **vncpasswd** to change your VNC password (answer *no* to the question \'Would you like to entera view-only password (y/n)?\'
 
 Terminal
-^^^^^^^^
+========
 To access litio via the terminal, use ssh:
 
 ``ssh username@192.168.16.160``
@@ -139,7 +139,7 @@ To avoid entering the password every time you connect, ssh-keygen could be used 
    https://192.168.16.160:9090/
 
 GUI
-^^^
+========
 To open the Graphical User Interface follow these steps:
 
 1. Establish a tunnel

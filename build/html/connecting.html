@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -53,7 +54,7 @@
 <div class="topic">
 <p class="topic-title">You need to have at hand:</p>
 <dl class="simple">
-<dt>IP address</dt><dd><p><strong>192.168.16.175</strong></p>
+<dt>IP address</dt><dd><p><strong>192.168.16.160</strong></p>
 </dd>
 <dt><em>username</em></dt><dd><p>same as in your email address (e.g.: agallo)</p>
 </dd>
@@ -69,8 +70,8 @@
 <h2>Web browser<a class="headerlink" href="#web-browser" title="Permalink to this headline">¶</a></h2>
 <p>No matter your operating system, you can always use the web browser to
 access the terminal (note: the terminal!) of the machine, through the
-<a class="reference external" href="https://192.168.16.175:9090/">address</a>:</p>
-<p><a class="reference external" href="https://192.168.16.175:9090/">https://192.168.16.175:9090/</a></p>
+<a class="reference external" href="https://192.168.16.160:9090/">address</a>:</p>
+<p><a class="reference external" href="https://192.168.16.160:9090/">https://192.168.16.160:9090/</a></p>
 </div>
 <div class="section" id="windows">
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
@@ -90,7 +91,7 @@ access the terminal (note: the terminal!) of the machine, through the
 <li><p>Download and <a class="reference external" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">install Putty</a></p></li>
 </ol>
 <ol class="arabic simple" start="2">
-<li><p>Open PuTTY and <strong>enter the address 192.168.16.175*. Enter a name (e.g.: litio) and **click save</strong> so that you don’t have to enter the data every time you connect.</p></li>
+<li><p>Open PuTTY and <strong>enter the address 192.168.16.160*. Enter a name (e.g.: litio) and **click save</strong> so that you don’t have to enter the data every time you connect.</p></li>
 </ol>
 <a class="reference internal image-reference" href="_images/putty1.png"><img alt="_images/putty1.png" class="align-center" src="_images/putty1.png" style="width: 364.0px; height: 359.20000000000005px;" /></a>
 <ol class="arabic simple" start="3">
@@ -151,20 +152,20 @@ access the terminal (note: the terminal!) of the machine, through the
 </ul>
 </div>
 <p>To access litio via the terminal, use ssh:</p>
-<p><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">username&#64;192.168.16.175</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">username&#64;192.168.16.160</span></code></p>
 <p>To avoid entering the password every time you connect, ssh-keygen could be used as described for instance here: <a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-2">how to set up SSH keys</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Access via Web Browser</p>
-<p>Remember you can also access a terminal via your web browser entering in the search bar the following <a class="reference external" href="https://192.168.16.175:9090/">address</a>:</p>
-<p><a class="reference external" href="https://192.168.16.175:9090/">https://192.168.16.175:9090/</a></p>
+<p>Remember you can also access a terminal via your web browser entering in the search bar the following <a class="reference external" href="https://192.168.16.160:9090/">address</a>:</p>
+<p><a class="reference external" href="https://192.168.16.160:9090/">https://192.168.16.160:9090/</a></p>
 </div>
 <p>To open the Graphical User Interface follow these steps:</p>
 <div class="section" id="id2">
 <h3>1. Establish a tunnel<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Open a terminal in your local computer and execute the command:</p>
-<p><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">vnc_id:127.0.0.1:vnc_id</span> <span class="pre">username&#64;192.168.16.175</span></code></p>
-<p>For example: <em>ssh -L 5901:127.0.0.1:5901 gallo&#64;192.168.16.175</em>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">vnc_id:127.0.0.1:vnc_id</span> <span class="pre">username&#64;192.168.16.160</span></code></p>
+<p>For example: <em>ssh -L 5901:127.0.0.1:5901 gallo&#64;192.168.16.160</em>.</p>
 <p><strong>Do not close!</strong> As in windows it needs to stay open in order to allow the VNC
 client to connect.</p>
 </div>

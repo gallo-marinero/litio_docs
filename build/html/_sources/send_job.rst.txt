@@ -23,7 +23,7 @@ This is a working script to submit jobs in litio.
    ## Define the name for this job
    #PBS -N test1
    ## Define the number of cores (ncpus)
-   #PBS -l ncpus=1
+   #PBS -l nodes=1:ppn=1
    ## Merge standard output and error files
    #PBS -j oe
    ## (Optional) Define the maximum time you want the job to be running. Default: unlimited

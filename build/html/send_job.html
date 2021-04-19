@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -60,7 +61,7 @@ that efficiently takes care of the queue and resources. Litio uses <a class="ref
 <span class="c1">## Define the name for this job</span>
 <span class="c1">#PBS -N test1</span>
 <span class="c1">## Define the number of cores (ncpus)</span>
-<span class="c1">#PBS -l ncpus=1</span>
+<span class="c1">#PBS -l nodes=1:ppn=1</span>
 <span class="c1">## Merge standard output and error files</span>
 <span class="c1">#PBS -j oe</span>
 <span class="c1">## (Optional) Define the maximum time you want the job to be running. Default: unlimited</span>
