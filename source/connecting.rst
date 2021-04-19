@@ -6,7 +6,7 @@ How to connect to litio
 .. topic:: You need to have at hand:
 
     IP address
-        **192.168.16.175**
+        **192.168.16.160**
     *username*
         same as in your email address (e.g.: agallo)
     *password*
@@ -20,10 +20,10 @@ Web browser
 ###########
 No matter your operating system, you can always use the web browser to 
 access the terminal (note: the terminal!) of the machine, through the
-`address <https://192.168.16.175:9090/>`_:
+`address <https://192.168.16.160:9090/>`_:
 
 
-https://192.168.16.175:9090/
+https://192.168.16.160:9090/
 
 
 Windows
@@ -44,7 +44,7 @@ To connect to the machine using the graphical interface, first follow this steps
 
 .. _install Putty: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
-2. Open PuTTY and **enter the address 192.168.16.175*. Enter a name (e.g.: litio) and **click save** so that you don’t have to enter the data every time you connect.
+2. Open PuTTY and **enter the address 192.168.16.160*. Enter a name (e.g.: litio) and **click save** so that you don’t have to enter the data every time you connect.
 
 .. image:: pics_connect_litio/putty1.png
    :scale: 80 %
@@ -128,15 +128,15 @@ Terminal
 ^^^^^^^^
 To access litio via the terminal, use ssh:
 
-``ssh username@192.168.16.175``
+``ssh username@192.168.16.160``
 
 To avoid entering the password every time you connect, ssh-keygen could be used as described for instance here: `how to set up SSH keys <https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-2>`_
 
 .. note:: Access via Web Browser
 
-   Remember you can also access a terminal via your web browser entering in the search bar the following `address <https://192.168.16.175:9090/>`_:
+   Remember you can also access a terminal via your web browser entering in the search bar the following `address <https://192.168.16.160:9090/>`_:
 
-   https://192.168.16.175:9090/
+   https://192.168.16.160:9090/
 
 GUI
 ^^^
@@ -146,9 +146,9 @@ To open the Graphical User Interface follow these steps:
 ---------------------
 Open a terminal in your local computer and execute the command:
 
-``ssh -L vnc_id:127.0.0.1:vnc_id username@192.168.16.175``
+``ssh -L vnc_id:127.0.0.1:vnc_id username@192.168.16.160``
 
-For example: *ssh -L 5901:127.0.0.1:5901 gallo@192.168.16.175*.
+For example: *ssh -L 5901:127.0.0.1:5901 gallo@192.168.16.160*.
 
 **Do not close!** As in windows it needs to stay open in order to allow the VNC
 client to connect.
